@@ -35,7 +35,12 @@
         position: absolute;
         animation: fly 5s linear infinite;
       }
-
+      @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+                padding: 10px;
+            }
+        }
       @keyframes fly {
         0% {
           transform: translateY(100vh) rotate(0deg);
