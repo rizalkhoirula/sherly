@@ -1,122 +1,1334 @@
-<html><meta charset='UTF-8'/>
-<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
-<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-<link href="https://feeldreams.github.io/night/style.css" rel="stylesheet" type="text/css" />
+<html>
+  <head>
+    <title>Sherly Zulia Nauri</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Times New Roman";
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
 
-<head>
-<title>alooo 雪莉</title>
-</head>
-<body>
-	
-   <div id="bodyblur">
-     <!-- Wallpaper -->
-     <img src="https://feeldreams.github.io/nightin.jpeg" id="wallpaper"/>
-     <div id="beneranblur"></div>
-   </div>
-   
-   <div id='Content'>
-     <div class="kumpulanstiker">
-         <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/pusn.gif" id="stiker1"/>
-         <img src="https://feeldreams.github.io/bunga.gif" id="stiker2"/>
-         <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3"/>
-         <img src="https://feeldreams.github.io/smprt.gif" id="stiker4"/>
-         <img src="https://feeldreams.github.io/ngumpet.gif" id="stiker5"/>
+      .container {
+        text-align: center;
+        padding: 50px;
+        margin-top: 250px;
+      }
 
-         <!-- Stiker untuk Akhiran -->
-         <img src="https://feeldreams.github.io/bunga.gif" id="stiker"/>
-     </div>
-     <p id="halo">Good Night!</p>
+      h1 {
+        color: #f0f0f0;
+        font-size: 2em;
+      }
 
-     <script class="sembunyi">
-       async function pesanAwal() {
-          await swalst.fire({
-            title: 'Aloo sherlyyy 雪莉 ',
-            imageUrl: '' + stiker1.src,
-         });   	
-         await swalst.fire({
-            title: 'Aku Cuma Mau Bilang',
-            imageUrl: '' + stiker2.src,
-         });
-         await swalst.fire({
-            title: 'Good Night ya! ',
-            imageUrl: '' + stiker3.src,
-         });
-         await swalst.fire({
-            title: 'Gabole Tidur Malem² 😡',
-            imageUrl: '' + stiker4.src,
-         });
-         await swalst.fire({
-            title: 'biar ga capee 🥺',
-            imageUrl: '' + stiker5.src,
-         });
-         mulaikonten();
-       }
+      .heart {
+        color: #ff69b4;
+        font-size: 4em;
+        position: absolute;
+        animation: fly 5s linear infinite;
+      }
 
-       // Memulai pesan awal saat halaman dimuat
-       window.onload = pesanAwal;
-     </script>
-     
-     <div><blockquote id='bq'>
-       <!-- Konten Pembukaan -->
-       <p id="kalimat">Dah Segitu Aja ya..      </p>
-       <p id="kalimat2">Selamat melepas lelah, jangan lupa baca doa dulu sebelum bobo... Semangat buat besok jalani harinya yaa.. 🥳</p>
-       <p id="kalimatbawah">谢谢</p> 
-       <p id="kalimatbawah2" class="sembunyi">Good Night</p> 
-       <p id="kalimatbawah3" class="sembunyi">晚安，好梦</p> 
-     </blockquote></div>
+      @keyframes fly {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
 
-     <!-- Tombol Multifungsi -->
-     <div id="Tombol">
-       <a onClick="multifungsi()">
-         <b id="tmbl">💌 Kirim</b>
-       </a>
-     </div>
-     
-     <!-- Pesan yang dikirim ke WhatsApp -->
-     <span id="pesanWA" class="sembunyi">ok baik jal</span>
-   </div>
+      .heart:nth-child(1) {
+        left: 2%;
+        animation-duration: 4s;
+      }
 
-<!-- Jangan Edit Bagian Ini -->
-<script>
-  ftom=0;aksift=0;ftganti=0;flag=1;flagg=1;fungsi=0;fungsiAwal=0;fungsitimer=0;vketikhalo=halo.innerHTML;
-  halo.innerHTML = "";var ahalo=0,vketikhalo;pesanwhatsapp = pesanWA.innerHTML;
-  Content.style = "opacity:1;margin-top:16vh;";
-  
-  async function menuju(){window.location = "https://api.whatsapp.com/send?phone=&text=6281230147253" + pesanwhatsapp;}
+      .heart:nth-child(2) {
+        left: 4%;
+        animation-duration: 6s;
+      }
 
-  const body = document.querySelector("body");
-  const swalst = Swal.mixin({
-    timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,
-  });
-  const swals = Swal.mixin({
-    allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 100, imageHeight: 100,
-  });
+      .heart:nth-child(3) {
+        left: 6%;
+        animation-duration: 5s;
+      }
 
-  function createHeart() {
-    const heart = document.createElement("div"); 
-    heart.className = "fas fa-heart"; 
-    heart.style.left = (Math.random() * 90)+"vw"; 
-    heart.style.animationDuration = (Math.random()*3)+2+"s"; 
-    body.appendChild(heart);
-  } 
-  setInterval(function() {
-    var heartArr = document.querySelectorAll(".fa-heart"); 
-    if (heartArr.length > 100) {
-      heartArr[0].remove();
-    }
-  },100);
-</script>
-<script src="https://feeldreams.github.io/night/script.js"></script>
-<!-- Sampai Sini -->
-</body>
+      .heart:nth-child(4) {
+        left: 8%;
+        animation-duration: 7s;
+      }
+
+      .heart:nth-child(5) {
+        left: 10%;
+        animation-duration: 3s;
+      }
+
+      .heart:nth-child(6) {
+        left: 12%;
+        animation-duration: 8s;
+      }
+
+      .heart:nth-child(7) {
+        left: 14%;
+        animation-duration: 4.5s;
+      }
+
+      .heart:nth-child(8) {
+        left: 16%;
+        animation-duration: 6.5s;
+      }
+
+      .heart:nth-child(9) {
+        left: 18%;
+        animation-duration: 5.5s;
+      }
+
+      .heart:nth-child(10) {
+        left: 20%;
+        animation-duration: 7.5s;
+      }
+
+      .heart:nth-child(11) {
+        left: 22%;
+        animation-duration: 3.5s;
+      }
+
+      .heart:nth-child(12) {
+        left: 24%;
+        animation-duration: 8.5s;
+      }
+
+      .heart:nth-child(13) {
+        left: 26%;
+        animation-duration: 4.2s;
+      }
+
+      .heart:nth-child(14) {
+        left: 28%;
+        animation-duration: 6.2s;
+      }
+
+      .heart:nth-child(15) {
+        left: 30%;
+        animation-duration: 5.2s;
+      }
+
+      .heart:nth-child(16) {
+        left: 32%;
+        animation-duration: 4.8s;
+      }
+
+      .heart:nth-child(17) {
+        left: 34%;
+        animation-duration: 6.8s;
+      }
+
+      .heart:nth-child(18) {
+        left: 36%;
+        animation-duration: 5.8s;
+      }
+
+      .heart:nth-child(19) {
+        left: 38%;
+        animation-duration: 7.8s;
+      }
+
+      .heart:nth-child(20) {
+        left: 40%;
+        animation-duration: 3.8s;
+      }
+
+      .heart:nth-child(21) {
+        left: 42%;
+        animation-duration: 8.2s;
+      }
+
+      .heart:nth-child(22) {
+        left: 44%;
+        animation-duration: 4.3s;
+      }
+
+      .heart:nth-child(23) {
+        left: 46%;
+        animation-duration: 6.3s;
+      }
+
+      .heart:nth-child(24) {
+        left: 48%;
+        animation-duration: 5.3s;
+      }
+
+      .heart:nth-child(25) {
+        left: 50%;
+        animation-duration: 7.3s;
+      }
+
+      .heart:nth-child(26) {
+        left: 52%;
+        animation-duration: 3.3s;
+      }
+
+      .heart:nth-child(27) {
+        left: 54%;
+        animation-duration: 8.3s;
+      }
+
+      .heart:nth-child(28) {
+        left: 56%;
+        animation-duration: 4.7s;
+      }
+
+      .heart:nth-child(29) {
+        left: 58%;
+        animation-duration: 6.7s;
+      }
+
+      .heart:nth-child(30) {
+        left: 60%;
+        animation-duration: 5.7s;
+      }
+
+      .heart:nth-child(31) {
+        left: 62%;
+        animation-duration: 4.1s;
+      }
+
+      .heart:nth-child(32) {
+        left: 64%;
+        animation-duration: 6.1s;
+      }
+
+      .heart:nth-child(33) {
+        left: 66%;
+        animation-duration: 5.1s;
+      }
+
+      .heart:nth-child(34) {
+        left: 68%;
+        animation-duration: 7.1s;
+      }
+
+      .heart:nth-child(35) {
+        left: 70%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(36) {
+        left: 72%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(37) {
+        left: 74%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(38) {
+        left: 76%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(39) {
+        left: 78%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(40) {
+        left: 80%;
+        animation-duration: 7.4s;
+      }
+
+      .heart:nth-child(41) {
+        left: 82%;
+        animation-duration: 3.4s;
+      }
+
+      .heart:nth-child(42) {
+        left: 84%;
+        animation-duration: 8.4s;
+      }
+
+      .heart:nth-child(43) {
+        left: 86%;
+        animation-duration: 4.6s;
+      }
+
+      .heart:nth-child(44) {
+        left: 88%;
+        animation-duration: 6.6s;
+      }
+
+      .heart:nth-child(45) {
+        left: 90%;
+        animation-duration: 5.6s;
+      }
+
+      .heart:nth-child(46) {
+        left: 92%;
+        animation-duration: 7.6s;
+      }
+
+      .heart:nth-child(47) {
+        left: 94%;
+        animation-duration: 3.6s;
+      }
+
+      .heart:nth-child(48) {
+        left: 96%;
+        animation-duration: 8.6s;
+      }
+
+      .heart:nth-child(49) {
+        left: 98%;
+        animation-duration: 4.9s;
+      }
+
+      .heart:nth-child(50) {
+        left: 100%;
+        animation-duration: 6.9s;
+      }
+
+      .heart:nth-child(51) {
+        left: 1%;
+        animation-duration: 4.1s;
+      }
+
+      .heart:nth-child(52) {
+        left: 3%;
+        animation-duration: 6.1s;
+      }
+
+      .heart:nth-child(53) {
+        left: 5%;
+        animation-duration: 5.1s;
+      }
+
+      .heart:nth-child(54) {
+        left: 7%;
+        animation-duration: 7.1s;
+      }
+
+      .heart:nth-child(55) {
+        left: 9%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(56) {
+        left: 11%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(57) {
+        left: 13%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(58) {
+        left: 15%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(59) {
+        left: 17%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(60) {
+        left: 19%;
+        animation-duration: 7.4s;
+      }
+
+      .heart:nth-child(61) {
+        left: 21%;
+        animation-duration: 3.4s;
+      }
+
+      .heart:nth-child(62) {
+        left: 23%;
+        animation-duration: 8.4s;
+      }
+
+      .heart:nth-child(63) {
+        left: 25%;
+        animation-duration: 4.6s;
+      }
+
+      .heart:nth-child(64) {
+        left: 27%;
+        animation-duration: 6.6s;
+      }
+
+      .heart:nth-child(65) {
+        left: 29%;
+        animation-duration: 5.6s;
+      }
+
+      .heart:nth-child(66) {
+        left: 31%;
+        animation-duration: 7.6s;
+      }
+
+      .heart:nth-child(67) {
+        left: 33%;
+        animation-duration: 3.6s;
+      }
+
+      .heart:nth-child(68) {
+        left: 35%;
+        animation-duration: 8.6s;
+      }
+
+      .heart:nth-child(69) {
+        left: 37%;
+        animation-duration: 4.9s;
+      }
+
+      .heart:nth-child(70) {
+        left: 39%;
+        animation-duration: 6.9s;
+      }
+
+      .heart:nth-child(71) {
+        left: 41%;
+        animation-duration: 4.1s;
+      }
+
+      .heart:nth-child(72) {
+        left: 43%;
+        animation-duration: 6.1s;
+      }
+
+      .heart:nth-child(73) {
+        left: 45%;
+        animation-duration: 5.1s;
+      }
+
+      .heart:nth-child(74) {
+        left: 47%;
+        animation-duration: 7.1s;
+      }
+
+      .heart:nth-child(75) {
+        left: 49%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(76) {
+        left: 51%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(77) {
+        left: 53%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(78) {
+        left: 55%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(79) {
+        left: 57%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(80) {
+        left: 59%;
+        animation-duration: 7.4s;
+      }
+
+      .heart:nth-child(81) {
+        left: 61%;
+        animation-duration: 3.4s;
+      }
+
+      .heart:nth-child(82) {
+        left: 63%;
+        animation-duration: 8.4s;
+      }
+
+      .heart:nth-child(83) {
+        left: 65%;
+        animation-duration: 4.6s;
+      }
+
+      .heart:nth-child(84) {
+        left: 67%;
+        animation-duration: 6.6s;
+      }
+
+      .heart:nth-child(85) {
+        left: 69%;
+        animation-duration: 5.6s;
+      }
+
+      .heart:nth-child(86) {
+        left: 71%;
+        animation-duration: 7.6s;
+      }
+
+      .heart:nth-child(87) {
+        left: 73%;
+        animation-duration: 3.6s;
+      }
+
+      .heart:nth-child(88) {
+        left: 75%;
+        animation-duration: 8.6s;
+      }
+
+      .heart:nth-child(89) {
+        left: 77%;
+        animation-duration: 4.9s;
+      }
+
+      .heart:nth-child(90) {
+        left: 79%;
+        animation-duration: 6.9s;
+      }
+
+      .heart:nth-child(91) {
+        left: 81%;
+        animation-duration: 4.1s;
+      }
+
+      .heart:nth-child(92) {
+        left: 83%;
+        animation-duration: 6.1s;
+      }
+
+      .heart:nth-child(93) {
+        left: 85%;
+        animation-duration: 5.1s;
+      }
+
+      .heart:nth-child(94) {
+        left: 87%;
+        animation-duration: 7.1s;
+      }
+
+      .heart:nth-child(95) {
+        left: 89%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(96) {
+        left: 91%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(97) {
+        left: 93%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(98) {
+        left: 95%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(99) {
+        left: 97%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(100) {
+        left: 99%;
+        animation-duration: 7.4s;
+      }
+      .heart:nth-child(101) {
+        left: 2%;
+        animation-duration: 3.2s;
+      }
+
+      .heart:nth-child(102) {
+        left: 4%;
+        animation-duration: 4.5s;
+      }
+
+      .heart:nth-child(103) {
+        left: 6%;
+        animation-duration: 6.7s;
+      }
+
+      .heart:nth-child(104) {
+        left: 8%;
+        animation-duration: 5.5s;
+      }
+
+      .heart:nth-child(105) {
+        left: 10%;
+        animation-duration: 7.7s;
+      }
+
+      .heart:nth-child(106) {
+        left: 12%;
+        animation-duration: 3.7s;
+      }
+
+      .heart:nth-child(107) {
+        left: 14%;
+        animation-duration: 8.2s;
+      }
+
+      .heart:nth-child(108) {
+        left: 16%;
+        animation-duration: 4.3s;
+      }
+
+      .heart:nth-child(109) {
+        left: 18%;
+        animation-duration: 6.3s;
+      }
+
+      .heart:nth-child(110) {
+        left: 20%;
+        animation-duration: 5.3s;
+      }
+
+      .heart:nth-child(111) {
+        left: 22%;
+        animation-duration: 7.3s;
+      }
+
+      .heart:nth-child(112) {
+        left: 24%;
+        animation-duration: 3.3s;
+      }
+
+      .heart:nth-child(113) {
+        left: 26%;
+        animation-duration: 8.3s;
+      }
+
+      .heart:nth-child(114) {
+        left: 28%;
+        animation-duration: 4.8s;
+      }
+
+      .heart:nth-child(115) {
+        left: 30%;
+        animation-duration: 6.8s;
+      }
+
+      .heart:nth-child(116) {
+        left: 32%;
+        animation-duration: 5.8s;
+      }
+
+      .heart:nth-child(117) {
+        left: 34%;
+        animation-duration: 7.8s;
+      }
+
+      .heart:nth-child(118) {
+        left: 36%;
+        animation-duration: 3.8s;
+      }
+
+      .heart:nth-child(119) {
+        left: 38%;
+        animation-duration: 8.7s;
+      }
+
+      .heart:nth-child(120) {
+        left: 40%;
+        animation-duration: 4.1s;
+      }
+
+      .heart:nth-child(121) {
+        left: 42%;
+        animation-duration: 6.1s;
+      }
+
+      .heart:nth-child(122) {
+        left: 44%;
+        animation-duration: 5.1s;
+      }
+
+      .heart:nth-child(123) {
+        left: 46%;
+        animation-duration: 7.1s;
+      }
+
+      .heart:nth-child(124) {
+        left: 48%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(125) {
+        left: 50%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(126) {
+        left: 52%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(127) {
+        left: 54%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(128) {
+        left: 56%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(129) {
+        left: 58%;
+        animation-duration: 7.4s;
+      }
+
+      .heart:nth-child(130) {
+        left: 60%;
+        animation-duration: 3.4s;
+      }
+
+      .heart:nth-child(131) {
+        left: 62%;
+        animation-duration: 8.4s;
+      }
+
+      .heart:nth-child(132) {
+        left: 64%;
+        animation-duration: 4.6s;
+      }
+
+      .heart:nth-child(133) {
+        left: 66%;
+        animation-duration: 6.6s;
+      }
+
+      .heart:nth-child(134) {
+        left: 68%;
+        animation-duration: 5.6s;
+      }
+
+      .heart:nth-child(135) {
+        left: 70%;
+        animation-duration: 7.6s;
+      }
+
+      .heart:nth-child(136) {
+        left: 72%;
+        animation-duration: 3.6s;
+      }
+
+      .heart:nth-child(137) {
+        left: 74%;
+        animation-duration: 8.6s;
+      }
+
+      .heart:nth-child(138) {
+        left: 76%;
+        animation-duration: 4.9s;
+      }
+
+      .heart:nth-child(139) {
+        left: 78%;
+        animation-duration: 6.9s;
+      }
+
+      .heart:nth-child(140) {
+        left: 80%;
+        animation-duration: 5.9s;
+      }
+
+      .heart:nth-child(141) {
+        left: 82%;
+        animation-duration: 4.2s;
+      }
+
+      .heart:nth-child(142) {
+        left: 84%;
+        animation-duration: 6.2s;
+      }
+
+      .heart:nth-child(143) {
+        left: 86%;
+        animation-duration: 5.2s;
+      }
+
+      .heart:nth-child(144) {
+        left: 88%;
+        animation-duration: 7.2s;
+      }
+
+      .heart:nth-child(145) {
+        left: 90%;
+        animation-duration: 3.2s;
+      }
+
+      .heart:nth-child(146) {
+        left: 92%;
+        animation-duration: 8.2s;
+      }
+
+      .heart:nth-child(147) {
+        left: 94%;
+        animation-duration: 4.5s;
+      }
+
+      .heart:nth-child(148) {
+        left: 96%;
+        animation-duration: 6.5s;
+      }
+
+      .heart:nth-child(149) {
+        left: 98%;
+        animation-duration: 5.5s;
+      }
+
+      .heart:nth-child(150) {
+        left: 100%;
+        animation-duration: 7.5s;
+      }
+
+      .heart:nth-child(151) {
+        left: 1%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(152) {
+        left: 3%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(153) {
+        left: 5%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(154) {
+        left: 7%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(155) {
+        left: 9%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(156) {
+        left: 11%;
+        animation-duration: 7.4s;
+      }
+
+      .heart:nth-child(157) {
+        left: 13%;
+        animation-duration: 3.4s;
+      }
+
+      .heart:nth-child(158) {
+        left: 15%;
+        animation-duration: 8.4s;
+      }
+
+      .heart:nth-child(159) {
+        left: 17%;
+        animation-duration: 4.6s;
+      }
+
+      .heart:nth-child(160) {
+        left: 19%;
+        animation-duration: 6.6s;
+      }
+
+      .heart:nth-child(161) {
+        left: 21%;
+        animation-duration: 5.6s;
+      }
+
+      .heart:nth-child(162) {
+        left: 23%;
+        animation-duration: 7.6s;
+      }
+
+      .heart:nth-child(163) {
+        left: 25%;
+        animation-duration: 3.6s;
+      }
+
+      .heart:nth-child(164) {
+        left: 27%;
+        animation-duration: 8.6s;
+      }
+
+      .heart:nth-child(165) {
+        left: 29%;
+        animation-duration: 4.9s;
+      }
+
+      .heart:nth-child(166) {
+        left: 31%;
+        animation-duration: 6.9s;
+      }
+
+      .heart:nth-child(167) {
+        left: 33%;
+        animation-duration: 5.9s;
+      }
+
+      .heart:nth-child(168) {
+        left: 35%;
+        animation-duration: 7.9s;
+      }
+
+      .heart:nth-child(169) {
+        left: 37%;
+        animation-duration: 4.2s;
+      }
+
+      .heart:nth-child(170) {
+        left: 39%;
+        animation-duration: 6.2s;
+      }
+
+      .heart:nth-child(171) {
+        left: 41%;
+        animation-duration: 5.2s;
+      }
+
+      .heart:nth-child(172) {
+        left: 43%;
+        animation-duration: 7.2s;
+      }
+
+      .heart:nth-child(173) {
+        left: 45%;
+        animation-duration: 3.2s;
+      }
+
+      .heart:nth-child(174) {
+        left: 47%;
+        animation-duration: 8.2s;
+      }
+
+      .heart:nth-child(175) {
+        left: 49%;
+        animation-duration: 4.5s;
+      }
+
+      .heart:nth-child(176) {
+        left: 51%;
+        animation-duration: 6.5s;
+      }
+
+      .heart:nth-child(177) {
+        left: 53%;
+        animation-duration: 5.5s;
+      }
+
+      .heart:nth-child(178) {
+        left: 55%;
+        animation-duration: 7.5s;
+      }
+
+      .heart:nth-child(179) {
+        left: 57%;
+        animation-duration: 3.5s;
+      }
+
+      .heart:nth-child(180) {
+        left: 59%;
+        animation-duration: 8.5s;
+      }
+
+      .heart:nth-child(181) {
+        left: 61%;
+        animation-duration: 4.8s;
+      }
+
+      .heart:nth-child(182) {
+        left: 63%;
+        animation-duration: 6.8s;
+      }
+
+      .heart:nth-child(183) {
+        left: 65%;
+        animation-duration: 5.8s;
+      }
+
+      .heart:nth-child(184) {
+        left: 67%;
+        animation-duration: 7.8s;
+      }
+
+      .heart:nth-child(185) {
+        left: 69%;
+        animation-duration: 3.8s;
+      }
+
+      .heart:nth-child(186) {
+        left: 71%;
+        animation-duration: 8.8s;
+      }
+
+      .heart:nth-child(187) {
+        left: 73%;
+        animation-duration: 4.9s;
+      }
+
+      .heart:nth-child(188) {
+        left: 75%;
+        animation-duration: 6.9s;
+      }
+
+      .heart:nth-child(189) {
+        left: 77%;
+        animation-duration: 5.9s;
+      }
+
+      .heart:nth-child(190) {
+        left: 79%;
+        animation-duration: 7.9s;
+      }
+
+      .heart:nth-child(191) {
+        left: 81%;
+        animation-duration: 4.1s;
+      }
+
+      .heart:nth-child(192) {
+        left: 83%;
+        animation-duration: 6.1s;
+      }
+
+      .heart:nth-child(193) {
+        left: 85%;
+        animation-duration: 5.1s;
+      }
+
+      .heart:nth-child(194) {
+        left: 87%;
+        animation-duration: 7.1s;
+      }
+
+      .heart:nth-child(195) {
+        left: 89%;
+        animation-duration: 3.1s;
+      }
+
+      .heart:nth-child(196) {
+        left: 91%;
+        animation-duration: 8.1s;
+      }
+
+      .heart:nth-child(197) {
+        left: 93%;
+        animation-duration: 4.4s;
+      }
+
+      .heart:nth-child(198) {
+        left: 95%;
+        animation-duration: 6.4s;
+      }
+
+      .heart:nth-child(199) {
+        left: 97%;
+        animation-duration: 5.4s;
+      }
+
+      .heart:nth-child(200) {
+        left: 99%;
+        animation-duration: 7.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>The longer I'm with you <br> the more I love you</h1>
+    </div>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+    <i class="fas fa-heart heart"></i>
+  </body>
 </html>
