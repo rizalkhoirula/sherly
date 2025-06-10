@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -36,8 +36,6 @@
         --dark-color: #333;
         --font-heading: "Pacifico", cursive;
         --font-body: "Poppins", sans-serif;
-        /* Menambahkan variabel font baru untuk nama */
-        --font-name-special: "Chewy", cursive;
       }
       body {
         font-family: var(--font-body);
@@ -84,10 +82,6 @@
       }
       .font-pacifico {
         font-family: var(--font-heading);
-      }
-      /* Class CSS baru untuk font nama */
-      .font-name {
-        font-family: var(--font-name-special);
       }
       .text-primary {
         color: var(--primary-color) !important;
@@ -357,6 +351,7 @@
         border-color: var(--secondary-color);
         transform: scale(1.05);
       }
+      /* === AKHIR DARI CSS GAME === */
     </style>
   </head>
   <body>
@@ -377,8 +372,8 @@
           Haii sayangkuu cintakuu duniakuu!
         </h1>
         <p class="animate__animated animate__fadeInUp">
-          ketemu sama akuu di versi websitenyaa Aku punya sesuatu yang harus
-          kamu lihatttt...
+          ketemu sama akuu di versi websitenyaa
+          Aku punya sesuatu yang harus kamu lihatttt...
         </p>
         <button
           id="open-surprise"
@@ -399,10 +394,10 @@
             Happy Birthday!
           </h2>
           <h3
-            class="font-name text-secondary animate__animated animate__fadeIn"
+            class="font-pacifico text-secondary animate__animated animate__fadeIn"
             style="animation-delay: 0.5s"
           >
-            Sherly Zulia Nauri
+            sHERLY ZULIA NAURI
           </h3>
           <p
             class="lead animate__animated animate__fadeInUp"
@@ -512,31 +507,34 @@
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="1.jpg" alt="Gallery Image 1" />
+                <img
+                  src="https://i.pinimg.com/564x/27/3f/8a/273f8a29a03f4410f9a2b9062b1a8f9c.jpg"
+                  alt="Gallery Image 1"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="2.jpg" alt="Gallery Image 2" />
+                <img
+                  src="https://i.pinimg.com/564x/0a/66/b3/0a66b3f79e5f73ab5652573215c0e189.jpg"
+                  alt="Gallery Image 2"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="3.jpg" alt="Gallery Image 3" />
+                <img
+                  src="https://i.pinimg.com/564x/27/78/ed/2778ed853d865c697b0a373752e5033c.jpg"
+                  alt="Gallery Image 3"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="4.jpg" alt="Gallery Image 4" />
+                <img
+                  src="https://i.pinimg.com/564x/12/35/60/123560731557088b0a9925e59b92209d.jpg"
+                  alt="Gallery Image 4"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="8.jpg" alt="Gallery Image 5" />
-              </div>
-              <div class="swiper-slide">
-                <img src="9.jpg" alt="Gallery Image 6" />
-              </div>
-              <div class="swiper-slide">
-                <img src="10.jpg" alt="Gallery Image 7" />
-              </div>
-              <div class="swiper-slide">
-                <img src="11.jpg" alt="Gallery Image 8" />
-              </div>
-              <div class="swiper-slide">
-                <img src="12.jpg" alt="Gallery Image 9" />
+                <img
+                  src="https://i.pinimg.com/564x/6c/42/1d/6c421d03c62f2c8d28e75e353273e979.jpg"
+                  alt="Gallery Image 5"
+                />
               </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -554,28 +552,36 @@
             Photobox Ceria!
           </h3>
           <p class="text-center text-muted">
-            ini beberapa fotomu yang jadi kesukaan akuu!
+            Klik salah satu foto untuk melihat kejutan!
           </p>
           <div class="photobox-grid">
             <div
               class="photo-item"
-              style="background-image: url('5.jpg')"
-              data-image="5.jpg"
+              style="
+                background-image: url('https://i.pinimg.com/564x/11/4a/11/114a11b66710636de91325d0c753b22e.jpg');
+              "
+              data-image="https://i.pinimg.com/564x/11/4a/11/114a11b66710636de91325d0c753b22e.jpg"
             ></div>
             <div
               class="photo-item"
-              style="background-image: url('6.jpg')"
-              data-image="6.jpg"
+              style="
+                background-image: url('https://i.pinimg.com/564x/d1/29/7c/d1297cc8997c27761f93933221c810ac.jpg');
+              "
+              data-image="https://i.pinimg.com/564x/d1/29/7c/d1297cc8997c27761f93933221c810ac.jpg"
             ></div>
             <div
               class="photo-item"
-              style="background-image: url('7.jpg')"
-              data-image="7.jpg"
+              style="
+                background-image: url('https://i.pinimg.com/564x/55/7c/b7/557cb76a44c7bb5e679c4244015f16b2.jpg');
+              "
+              data-image="https://i.pinimg.com/564x/55/7c/b7/557cb76a44c7bb5e679c4244015f16b2.jpg"
             ></div>
             <div
               class="photo-item"
-              style="background-image: url('13.jpg')"
-              data-image="13.jpg"
+              style="
+                background-image: url('https://i.pinimg.com/564x/e7/58/91/e75891404e4e93096057a666ac589255.jpg');
+              "
+              data-image="https://i.pinimg.com/564x/e7/58/91/e75891404e4e93096057a666ac589255.jpg"
             ></div>
           </div>
         </section>
@@ -657,7 +663,7 @@
       </div>
 
       <footer class="text-center py-4">
-        <p class="font-pacifico">Made with ❤️ by Rizal KA</p>
+        <p class="font-pacifico">Made with ❤️ by You</p>
       </footer>
     </div>
 
@@ -755,7 +761,7 @@
           event.preventDefault();
 
           // GANTI NOMOR WHATSAPP DI BAWAH INI
-          const noWhatsapp = "6281230147253";
+          const noWhatsapp = "6281234567890";
 
           const questions = [
             { id: "q1", text: "nama kontakmu di HP ku" },
@@ -774,12 +780,11 @@
           questions.forEach((q, index) => {
             const inputElement = document.getElementById(q.id);
             const answer = inputElement.value.trim() || "(belum diisi)";
-            message += `${index + 1}. ${q.text}: ${answer}\n`;
+            message += `${index + 1}. ${q.text}: *${answer}*\n`;
           });
 
           message += "\nMakasih ya buat surprisenya, I love you! ❤️";
 
-          // Fixed WhatsApp link formatting
           const waLink = `https://wa.me/${noWhatsapp}?text=${encodeURIComponent(
             message
           )}`;
