@@ -25,7 +25,7 @@
     />
     <link
       rel="stylesheet"
-      href="httpshttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
 
     <style>
@@ -357,14 +357,59 @@
         border-color: var(--secondary-color);
         transform: scale(1.05);
       }
+
+      /* === CSS PEMUTAR MUSIK === */
+      .music-player {
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+      .music-player.hidden {
+        opacity: 0;
+        visibility: hidden;
+        bottom: -100px;
+      }
+      .music-info {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        color: var(--dark-color);
+      }
+      .music-info .song-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .music-info .artist {
+        font-size: 0.75rem;
+        color: #666;
+      }
+      .music-controls button {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+      .music-controls button:hover {
+        color: var(--secondary-color);
+      }
     </style>
   </head>
   <body>
     <audio id="background-music" loop>
-      <source
-        src="https://firebasestorage.googleapis.com/v0/b/invitation-digital-b830f.appspot.com/o/Bruno%20Mars%20-%20Just%20The%20Way%20You%20Are%20(Official%20Music%20Video).mp3?alt=media&token=cba13669-7b56-432d-9311-628d05273f30"
-        type="audio/mpeg"
-      />
+      <source src="pp.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
 
@@ -386,6 +431,16 @@
         >
           Klik Di Sini ❤️
         </button>
+      </div>
+    </div>
+
+    <div id="music-player" class="music-player hidden">
+      <div class="music-info">
+        <span class="song-title">Here With Me</span>
+        <span class="artist">D4vd</span>
+      </div>
+      <div class="music-controls">
+        <button id="play-pause-btn"><i class="fas fa-play"></i></button>
       </div>
     </div>
 
@@ -690,6 +745,11 @@
         const openingPage = document.getElementById("opening-page");
         const mainContent = document.getElementById("main-content");
         const audio = document.getElementById("background-music");
+        // ===== Variabel Pemutar Musik =====
+        const musicPlayer = document.getElementById("music-player");
+        const playPauseBtn = document.getElementById("play-pause-btn");
+        const playIcon = '<i class="fas fa-play"></i>';
+        const pauseIcon = '<i class="fas fa-pause"></i>';
 
         openButton.addEventListener("click", () => {
           Swal.fire({
@@ -700,15 +760,28 @@
             confirmButtonColor: "#ff69b4",
           }).then(() => {
             audio.play();
+            playPauseBtn.innerHTML = pauseIcon; // Langsung ubah ke ikon pause
             openingPage.style.opacity = "0";
             openingPage.style.visibility = "hidden";
             document.body.style.overflow = "auto";
             mainContent.classList.remove("d-none");
+            musicPlayer.classList.remove("hidden"); // Tampilkan pemutar musik
             setTimeout(() => {
               mainContent.style.opacity = "1";
             }, 100);
             startFallingHearts();
           });
+        });
+
+        // ===== Script Pemutar Musik =====
+        playPauseBtn.addEventListener("click", () => {
+          if (audio.paused) {
+            audio.play();
+            playPauseBtn.innerHTML = pauseIcon;
+          } else {
+            audio.pause();
+            playPauseBtn.innerHTML = playIcon;
+          }
         });
 
         new Swiper(".swiper", {
